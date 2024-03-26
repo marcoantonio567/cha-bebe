@@ -7,7 +7,7 @@ from datetime import datetime
 def home(request):
     if request.method == "GET":
         itens = Iten.objects.filter(ativo=True)
-        return render(request, 'ver_itens.html', {'itens': itens})
+        return render(request, 'index.html', {'itens': itens})
     
     elif request.method == "POST":
         nome_digitado = request.POST.get('nome')
