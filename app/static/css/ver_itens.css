@@ -1,130 +1,132 @@
- /* style.css */
+/* style.css */
 
- /* Reset CSS */
- body,
- h1,
- h2,
- p,
- ul,
- li,
- form,
- label,
- input,
- button {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+/* Reset CSS */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+form,
+label,
+input,
+button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- /* Global styles */
- body {
-     font-family: "Arial", sans-serif;
-     line-height: 1.6;
-     background-color: #f9f9f9;
-     color: #333;
- }
+/* Global styles */
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
 
- header {
-     background-image: url(vetor-premium-de-fundo-abstrato-aquarela-azul-rosa_628634-1434.png);
-     background-position: center;
-     padding: 30px;
-     text-align: center;
- }
+header {
+    background-image: url(vetor-premium-de-fundo-abstrato-aquarela-azul-rosa_628634-1434.png);
+    background-position: center;
+    padding: 30px;
+    text-align: center;
+}
 
- h1 {
-     font-size: 36px;
-     margin-bottom: 10px;
-     color: #333;
- }
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
 
- p {
-     font-size: 18px;
-     margin-bottom: 20px;
- }
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
- main {
-     max-width: 800px;
-     margin: 0 auto;
-     padding: 20px;
- }
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
- 
- .confirmacao {
-     background-color: #e0e0e0;
-     box-shadow: 0px 0px 10px 0px rgba(18, 22, 255, 0.5); /* Exemplo de box-shadow */
-     border-radius: 10px;
-     padding: 30px;
-     margin-bottom: 30px;
- }
 
- h2 {
-     font-size: 24px;
-     color: #333;
-     margin-bottom: 20px;
- }
+.confirmacao {
+    background-color: #e0e0e0;
+    box-shadow: 0px 0px 10px 0px rgba(18, 22, 255, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
 
- .confirmacao form {
-     margin-top: 20px;
- }
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
 
- .confirmacao label {
-     display: block;
-     font-size: 18px;
-     margin-bottom: 10px;
-     color: #333;
- }
+.confirmacao form {
+    margin-top: 20px;
+}
 
- .confirmacao input[type="text"],
- .confirmacao input[type="email"] {
-     width: 100%;
-     padding: 10px;
-     margin-bottom: 20px;
-     border-radius: 5px;
-     border: 1px solid #ccc;
- }
+.confirmacao label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
 
- .confirmacao button {
-     background-color: #3498db;
-     color: #fff;
-     padding: 15px 30px;
-     border: none;
-     border-radius: 5px;
-     font-size: 18px;
-     cursor: pointer;
-     transition: background-color 0.3s ease;
- }
+.confirmacao input[type="text"],
+.confirmacao input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
 
- .confirmacao button:hover {
-     background-color: #d56fdfa6;
- }
+.confirmacao button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
- .presentes {
-     background-color: #f0f0f0;
-     border-radius: 10px;
-     box-shadow: 0px 0px 10px 0px #d56fdfa6; /* Exemplo de box-shadow */
-     padding: 30px;
-     margin-bottom: 30px;
- }
+.confirmacao button:hover {
+    background-color: #d56fdfa6;
+}
 
- .presentes ul {
-     list-style-type: none;
-     /* Remover marcadores de lista */
-     padding: 0;
-     /* Remover o preenchimento padrão */
- }
+.presentes {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #d56fdfa6;
+    padding: 30px;
+    margin-bottom: 30px;
+}
 
- .presentes li {
-     display: flex;
-     justify-content: space-between;
-     /* Alinhar os itens à esquerda e à direita */
-     align-items: center;
-     /* Alinhar verticalmente os itens */
-     margin-bottom: 10px;
- }
+.presentes ul {
+    list-style-type: none;
+    padding: 0;
+}
 
- .presentes .quantidade {
-     font-size: 14px;
-     /* Reduzir o tamanho da fonte para melhorar o alinhamento */
-     color: #777;
-     /* Cor do texto da quantidade */
- }
+.presentes li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.presentes input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.presentes .quantidade {
+    font-size: 14px;
+    color: #777;
+    margin-left: 10px;
+}

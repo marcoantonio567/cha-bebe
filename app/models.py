@@ -1,7 +1,7 @@
 from django.db import models
-from datetime import datetime
+from phonenumber_field.modelfields import PhoneNumberField
 
-class Inten(models.Model):
+class Iten(models.Model):
     nome = models.CharField(max_length=40)
     ativo = models.BooleanField(default=True)
     quantidade = models.IntegerField()
@@ -11,9 +11,9 @@ class Inten(models.Model):
 
 class Usuario(models.Model):
     user_nome = models.CharField(max_length=60)
-    email = models.EmailField(unique=True)  # Garante e-mails únicos
-    data_pedida = models.DateTimeField(auto_now_add=True)  # Define automaticamente a data de pedido
-    itens_pedidos = models.ManyToManyField(Inten, related_name='usuarios')  # Relação muitos-para-muitos com Inten
+    telefone = PhoneNumberField(default='')  # Adicionando um valor padrão temporário vazio
+    data_pedida = models.DateTimeField()  # Define automaticamente a data de pedido
+    itens_pedidos = models.ManyToManyField(Iten, related_name='usuarios')  # Relação muitos-para-muitos com Inten
     
     def __str__(self):
         return self.user_nome

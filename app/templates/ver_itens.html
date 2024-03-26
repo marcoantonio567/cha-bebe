@@ -24,7 +24,7 @@
             <li>
                 <input type="checkbox" name="presentes" id="presente{{ item.id }}" value="{{ item.id }}" />
                 <label for="presente{{ item.id }}">{{ item.nome }}</label>
-                <span class="quantidade">Quantidade: {{ item.quantidade }}</span>
+                <input type="number" name="quantidade[{{ item.id }}]" id="quantidade[{{ item.id }}]"/>
             </li>
             {% endfor %}
         </ul>
@@ -33,13 +33,15 @@
 
     <section class="confirmacao">
       <h2>Confirmação</h2>
-      <p>Por favor, confirme sua presença até o dia 10/01/2019.</p>
+      
       <form action="/" method="POST">
           {% csrf_token %}
           <label for="nome">Nome:</label>
           <input type="text" id="nome" name="nome" />
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" />
+
+          <label for="telefone">telefone:</label>
+          <input type="tel" id="telefone" name="telefone" />
+          
           <input type="hidden" id="pedidos" name="pedidos" value="" /> <!-- Campo oculto para armazenar os IDs dos pedidos -->
           <button type="submit" onclick="getSelectedItems()">Confirmar</button>
       </form>

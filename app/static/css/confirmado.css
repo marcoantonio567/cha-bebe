@@ -1,0 +1,28 @@
+body {
+    background-image: url(mtgrande.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 200px;
+    margin: 0;
+}
+
+main {
+    font-family:Arial, Helvetica, sans-serif ;
+    background-color: #f8d7da;
+    border-radius: 10px;
+    border: 2px solid #8d917f;
+    box-shadow: 0px 10px 15px 10px rgba(3, 66, 154, 0.5); 
+    padding: 20px;
+    display: inline-block;
+    max-width: 600px; /* Define uma largura máxima para a caixa de mensagem */
+}
+
+h2 {
+    color: #721c24;
+}
+
+h4 {
+    color: #721c24;
+}
