@@ -109,13 +109,14 @@ h2 {
 .presentes ul {
     list-style-type: none;
     padding: 0;
+    
 }
 
 .presentes li {
-    display: flex;
-    justify-content: space-between;
+   
     align-items: center;
     margin-bottom: 10px;
+  
 }
 
 .presentes input[type="number"] {
@@ -123,6 +124,8 @@ h2 {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    
+    
 }
 
 .presentes .quantidade {
