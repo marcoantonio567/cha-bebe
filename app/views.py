@@ -12,7 +12,8 @@ def home(request):
     elif request.method == "POST":
         name_typing = request.POST.get('nome')
         phone_typing = request.POST.get('telefone')  
-        seleted_products = request.POST.get('pedidos').split(",")  # get id list of selected products
+        pedidos_raw = request.POST.get('pedidos') or ""
+        seleted_products = [p.strip() for p in pedidos_raw.split(",") if p.strip()]
         
         if name_typing and phone_typing:  # check if fields are filled in
             try:
@@ -24,7 +25,11 @@ def home(request):
                 )
                 # associate selected products to new user
                 for pedido_id in seleted_products:
-                    pedido = Iten.objects.get(pk=pedido_id)
+                    try:
+                        pedido_id_int = int(pedido_id)
+                    except (TypeError, ValueError):
+                        continue
+                    pedido = Iten.objects.get(pk=pedido_id_int)
                     user.ordered_items.add(pedido)
 
                   
