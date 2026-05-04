@@ -2,12 +2,12 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 class Iten(models.Model):
-    nome = models.CharField(max_length=40)
-    ativo = models.BooleanField(default=True)
-    quantidade = models.IntegerField(null=True, blank=True)  # Permitindo que seja opcional
+    name = models.CharField(max_length=40)
+    active = models.BooleanField(default=True)
+    amount = models.IntegerField(null=True, blank=True)  # Permitindo que seja opcional
     
     def __str__(self):
-        return self.nome
+        return self.name
 
 
 

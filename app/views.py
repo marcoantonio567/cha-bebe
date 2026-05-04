@@ -6,7 +6,7 @@ from datetime import datetime
 
 def home(request):
     if request.method == "GET":
-        itens = Iten.objects.filter(ativo=True)
+        itens = Iten.objects.filter(active=True)
         return render(request, 'index.html', {'itens': itens})
     
     elif request.method == "POST":
