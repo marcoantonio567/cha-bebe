@@ -13,10 +13,10 @@ class Iten(models.Model):
 
 
 class Usuario(models.Model):
-    user_nome = models.CharField(max_length=60)
-    telefone = PhoneNumberField(default=0)  # Adicionando um valor padrão temporário vazio
-    data_pedida = models.DateTimeField()  # Define automaticamente a data de pedido
-    itens_pedidos = models.ManyToManyField(Iten, related_name='usuarios')  # Relação muitos-para-muitos com Inten
+    user_name = models.CharField(max_length=60)
+    phone = PhoneNumberField(default=0)  # Adicionando um valor padrão temporário vazio
+    current_date = models.DateTimeField()  # Define automaticamente a data de pedido
+    ordered_items = models.ManyToManyField(Iten, related_name='usuarios')  # Relação muitos-para-muitos com Inten
     
     def __str__(self):
-        return self.user_nome
+        return self.user_name

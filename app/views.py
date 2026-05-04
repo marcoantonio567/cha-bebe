@@ -10,28 +10,30 @@ def home(request):
         return render(request, 'index.html', {'itens': itens})
     
     elif request.method == "POST":
-        nome_digitado = request.POST.get('nome')
-        telefone_digitado = request.POST.get('telefone')  
-        pedidos_selecionados = request.POST.get('pedidos').split(",")  # Obter uma lista de IDs dos itens selecionados
+        name_typing = request.POST.get('nome')
+        phone_typing = request.POST.get('telefone')  
+        seleted_products = request.POST.get('pedidos').split(",")  # get id list of selected products
         
-        if nome_digitado and telefone_digitado:  # Verifica se os campos foram preenchidos
+        if name_typing and phone_typing:  # check if fields are filled in
             try:
-                # Cria o usuário
-                usuario = Usuario.objects.create(
-                    user_nome=nome_digitado,
-                    telefone=telefone_digitado,
-                    data_pedida=datetime.now(),
+                # create new user
+                user = Usuario.objects.create(
+                    user_name=name_typing,
+                    phone=phone_typing,
+                    current_date=datetime.now(),
                 )
-                # Associa os pedidos selecionados ao novo usuário
-                for pedido_id in pedidos_selecionados:
+                # associate selected products to new user
+                for pedido_id in seleted_products:
                     pedido = Iten.objects.get(pk=pedido_id)
-                    usuario.itens_pedidos.add(pedido)
+                    user.ordered_items.add(pedido)
 
                   
-                    
+                # redirect to confirmation page
                 return render(request, 'confirmado.html')
             except Exception as e:
+                # return error message
                 return HttpResponse(f"Erro ao criar usuário: {str(e)}")
         else:
-            return HttpResponse("Campos 'nome' e 'email' são obrigatórios!")
+            # return error message if fields are not filled in
+            return HttpResponse("Campos 'nome' e 'telefone' são obrigatórios!")
 
